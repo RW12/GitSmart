@@ -1,0 +1,19 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "ted@theohpark.com",
+    "longName": "GoDeeperPebble",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "sdkVersion": "3",
+    "shortName": "GoDeeperPebble",
+    "uuid": "30c59d4c-4dec-4bd0-8456-b0b8921008e1",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
+}
