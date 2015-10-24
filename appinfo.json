@@ -3,15 +3,21 @@
     "capabilities": [
         ""
     ],
-    "companyName": "ted@theohpark.com",
-    "longName": "GoDeeperPebble",
+    "companyName": "giannichen1993@gmail.com",
+    "longName": "PebbleCards",
     "projectType": "native",
     "resources": {
-        "media": []
+        "media": [
+            {
+                "file": "images/button62.png",
+                "name": "sdfd_asdsa",
+                "type": "png"
+            }
+        ]
     },
     "sdkVersion": "3",
-    "shortName": "GoDeeperPebble",
-    "uuid": "30c59d4c-4dec-4bd0-8456-b0b8921008e1",
+    "shortName": "PebbleCards",
+    "uuid": "61db1101-be5d-4abc-9d74-c660a6370550",
     "versionLabel": "1.0",
     "watchapp": {
         "watchface": false
