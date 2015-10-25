@@ -5,7 +5,7 @@ char const * const topics[] = {
 };
 
 // List of vocab words, 20 words
-char const * const vocab[][2] = {  
+char const * const vocab[20][2] = {  
 {"benevolent", "generous in providing aid to others"},
 {"bliss", "a state of extreme happiness"},
 {"didactic", "intended to teach or instruct"},
@@ -29,7 +29,7 @@ char const * const vocab[][2] = {
 };
 
 // List of math word, 11 words
-char const * const math[][2] = {
+char const * const math[11][2] = {
 {"base", "when using exponents, the base is the number being multiplied"},
 {"decimal", "A number with one or more digits to the right of the decimal point"},
 {"denominator", "Divisor; the number below the line in a fraction."},
