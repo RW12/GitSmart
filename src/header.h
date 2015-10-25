@@ -1,10 +1,7 @@
-// List of topics, 3 topics
-char const * const topics[5] = {
+// List of topics, 2 topics
+char const * const topics[2] = {
   "Vocab",
-  "Math",
-  "Countries",
-  "Periodic Table",
-  "Biological Systems"
+  "Math"
 };
 
 // List of vocab words, 20 words
@@ -45,66 +42,3 @@ char const * const math[11][3] = {
 {"Math", "repeating decimal", "A decimal with a sequence of digits that repeats itself indefinitely"},
 {"Math", "variable", "A letter used to represent one or more numbers"}
 };
-
-// List of countries, 20 countries
-char const * const countries[20][3] = {
-{"Countries", "Australia", "Capital: Canberra, GDP: 1240803, Pop: 23938400"},
-{"Countries", "Brazil", "Capital: Brasilia, GDP: 1799612, Pop: 204451000"},
-{"Countries", "Canada", "Capital: Ottawa, GDP: 1572781, Pop: 35851774"},
-{"Countries", "China", "Capital: Beijing, GDP: 11384763, Pop: 1376049000"},
-{"Countries", "France", "Capital: Paris, GDP: 2422649, Pop: 67107000"},
-{"Countries", "Germany", "Capital: Berlin, GDP: 3371003, Pop: 81083600"},
-{"Countries", "India", "Capital: New Delhi, GDP: 2182577, Pop: 1276267000"},
-{"Countries", "Indonesia", "Capital: Jakarta, GDP: 872615, Pop: 255461700"},
-{"Countries", "Italy", "Capital: Rome, GDP: 1819047, Pop: 60795612"},
-{"Countries", "Japan", "Capital: Tokyo, GDP: 4116242, Pop: 126919659"},
-{"Countries", "Mexico", "Capital: Mexico City, GDP: 1161483, Pop: 121736809"},
-{"Countries", "Netherlands", "Capital: Amsterdam, GDP: 750782, Pop: 16929326"},
-{"Countries", "Russia", "Capital: Moscow, GDP: 1235858, Pop: 143975923"},
-{"Countries", "Saudi Arabia", "Capital: Riyadh, GDP: 632073, Pop: 30770375"},
-{"Countries", "South Korea", "Capital: Seoul, GDP: 1392952, Pop: 50617045"},
-{"Countries", "Spain", "Capital: Madrid, GDP: 1221387, Pop: 46439864"},
-{"Countries", "Switzerkland", "Capital: Bern, GDP: 676979, Pop: 8211700"},
-{"Countries", "Turkey", "Capital: Ankara, GDP: 722219, Pop: 77695904"},
-{"Countries", "United Kingdom", "Capital: London, GDP: 2864903, Pop: 64511000"},
-{"Countries", "United States", "Capital: Washington, D.C., GDP: 17968195, Pop: 322014853"}
-};
-
-// List of period table, first 20 elements
-char const * const pertable[20][3] = {
-{"Periodic Table", "Hydrogen", "Atomic Number: 1, Avg. Atomic Mass: 1.008"},
-{"Periodic Table", "Helium", "Atomic Number: 2, Avg. Atomic Mass: 4.003"},
-{"Periodic Table", "Lithium", "Atomic Number: 3, Avg. Atomic Mass: 6.941"},
-{"Periodic Table", "Beryllium", "Atomic Number: 4, Avg. Atomic Mass: 9.012"},
-{"Periodic Table", "Boron", "Atomic Number: 5, Avg. Atomic Mass: 10.811"},
-{"Periodic Table", "Carbon", "Atomic Number: 6, Avg. Atomic Mass: 12.011"},
-{"Periodic Table", "Nitrogen", "Atomic Number: 7, Avg. Atomic Mass: 14.007"},
-{"Periodic Table", "Oxygen", "Atomic Number: 8, Avg. Atomic Mass: 15.999"},
-{"Periodic Table", "Florine", "Atomic Number: 9, Avg. Atomic Mass: 18.998"},
-{"Periodic Table", "Neon", "Atomic Number: 10, Avg. Atomic Mass: 20.18"},
-{"Periodic Table", "Sodium", "Atomic Number: 11, Avg. Atomic Mass: 22.99"},
-{"Periodic Table", "Magnesium", "Atomic Number: 12, Avg. Atomic Mass: 24.305"},
-{"Periodic Table", "Aluminum", "Atomic Number: 13, Avg. Atomic Mass: 26.982"},
-{"Periodic Table", "Silicon", "Atomic Number: 14, Avg. Atomic Mass: 28.086"},
-{"Periodic Table", "Phosphorus", "Atomic Number: 15, Avg. Atomic Mass: 30.974"},
-{"Periodic Table", "Sulfur", "Atomic Number: 16, Avg. Atomic Mass: 32.066"},
-{"Periodic Table", "Chlorine", "Atomic Number: 17, Avg. Atomic Mass: 35.453"},
-{"Periodic Table", "Argon", "Atomic Number: 18, Avg. Atomic Mass: 39.948"},
-{"Periodic Table", "Potassium", "Atomic Number: 19, Avg. Atomic Mass: 39.098"},
-{"Periodic Table", "Calcium", "Atomic Number: 20, Avg. Atomic Mass: 40.078"}
-};
-
-// List of biological systems, 11 systems
-char const * const biosystems[11][3] = {
-{"Biological Systems", "Circulatory System", "Pumping and channeling blood to and from the body and lungs with hearth, blood and blood vessels"},
-{"Biological Systems", "Integumentary System", "Skin, hair, fat, and nails"},
-{"Biological Systems", "Skeletal System", "Structural support and protection with bones, cartilage, ligaments and tendons"},
-{"Biological Systems", "Reproductive System", "The sex organs such as ovaries, fallopian tubes, uterus, vagina, mammary glands, testes, vas deferens, seminal vescicles and prostate"},
-{"Biological Systems", "Digestive System", "Digestion and processing food with salivary glands, esophagus, stomach, liver, gallbladder, pancreas, intestines, rectum and anus"},
-{"Biological Systems", "Urinary System", "Kidneys, ureters, bladder and urethra involved in fluid balance, electrolyte balance and excretion of urine"},
-{"Biological Systems", "Respiratory System", "The organs used for breathing, the pharynx, laryn, bronchi, lungs and diaphragm"},
-{"Biological Systems", "Endocrine System", "Communication within the body using hormonesmade by endocrine glands such as the hypothalamus, pituitarygland, pineal body or pineal gland, thyroid, parathyroid and adrenals, i.e., adrenal glands"},
-{"Biological Systems", "Lymphatic System", "Structures involved in the transfer of lymphbetween tissues and the blood stream; includes the lymph and thenodes and vessels. The lymphatic system includes functions including immune responses and development of antibodies"},
-{"Biological Systems", "Muscular System", "Allows for manipulation of the environment, provides locomotion, maintains posture, and produces heat. Includesskeletal muscles, smooth muscles and cardiac muscle"},
-{"Biological Systems", "Nervous System", "Collecting, transferring and processing information with brain, spinal cord and peripheral nervous system"}
-}

@@ -8,8 +8,29 @@ int array_of_column_index[2] ={0, 0};    // here 2 and 0,0 should be updated onc
 int array_of_max_column_index[2] ={11, 20}; //here 2 and 11, 20 should be updated once totalNumberOfTopics is udpated
 int topic_index = 0;    //maximum of this int is (totalNumberOfTopics - 1)
 int stage_index = 0;    // 0 represents subject selection, 1 represents word scrolling interface, 2 represents detailed definition of the word
-bool word_or_definition = false;  // false is the word, true is definition
 int totalNumberOfTopics = 2;
+
+//for background color 
+GColor8 color;
+
+//Rotate through 4 colors in order
+void setColor(){
+  switch(array_of_column_index[topic_index] % 4){
+    case 0: color = GColorLavenderIndigo;
+            break;
+    case 1: color = GColorMintGreen;
+            break;
+    case 2: color = GColorChromeYellow;
+            break;
+    case 3: color = GColorPictonBlue;
+            break;
+    default: break;
+  }
+  
+  //fill with background color
+  text_layer_set_background_color(text_layer, color);
+  window_set_background_color(window, color);
+}
 
 static void TopicSelectionUp(){
   if(topic_index == 0){
@@ -36,6 +57,8 @@ static void CardSelectionUp(){
   else{
     array_of_column_index[topic_index] = array_of_column_index[topic_index] - 1;
   }
+  
+  setColor();
 }
 
 static void CardSelectionDown(){
@@ -45,6 +68,8 @@ static void CardSelectionDown(){
   else{   //already at the bottom of the array
     array_of_column_index[topic_index] = 0; 
   }
+  
+  setColor();
 }
   
 static void select_click_handler(ClickRecognizerRef recognizer, void *context) {
@@ -108,7 +133,6 @@ static void down_click_handler(ClickRecognizerRef recognizer, void *context) {
   }
 }
 
-
 static void click_config_provider(void *context) {
   window_single_click_subscribe(BUTTON_ID_SELECT, select_click_handler);
   window_single_click_subscribe(BUTTON_ID_BACK, back_click_handler);
@@ -139,6 +163,7 @@ static void init(void) {
 	.load = window_load,
     .unload = window_unload,
   });
+  
   const bool animated = true;
   window_stack_push(window, animated);
 }

@@ -17,6 +17,10 @@
     },
     "sdkVersion": "3",
     "shortName": "PebbleCards",
+    "targetPlatforms": [
+        "basalt",
+        "chalk"
+    ],
     "uuid": "61db1101-be5d-4abc-9d74-c660a6370550",
     "versionLabel": "1.0",
     "watchapp": {
