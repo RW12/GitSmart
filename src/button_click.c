@@ -4,11 +4,11 @@
 static Window *window;
 static TextLayer *text_layer;
 
-int array_of_column_index[2] ={0, 0};    // here 2 and 0,0 should be updated once totalNumberOfTopics is updated
-int array_of_max_column_index[2] ={11, 20}; //here 2 and 11, 20 should be updated once totalNumberOfTopics is udpated
+int array_of_column_index[5] ={0, 0, 0, 0, 0};    // here 2 and 0,0 should be updated once totalNumberOfTopics is updated
+int array_of_max_column_index[5] ={20, 11, 20, 20, 11}; //here 2 and 11, 20 should be updated once totalNumberOfTopics is udpated
 int topic_index = 0;    //maximum of this int is (totalNumberOfTopics - 1)
 int stage_index = 0;    // 0 represents subject selection, 1 represents word scrolling interface, 2 represents detailed definition of the word
-int totalNumberOfTopics = 2;
+int totalNumberOfTopics = 5;
 
 //for background color 
 GColor8 color;
@@ -81,7 +81,15 @@ static void select_click_handler(ClickRecognizerRef recognizer, void *context) {
     if(topic_index == 1){
       text_layer_set_text(text_layer, math[array_of_column_index[topic_index]][stage_index]);
     }
-    //add more subjects here
+    if(topic_index == 2){
+      text_layer_set_text(text_layer, countries[array_of_column_index[topic_index]][stage_index]);
+    }
+    if(topic_index == 3){
+      text_layer_set_text(text_layer, pertable[array_of_column_index[topic_index]][stage_index]);
+    }
+    if(topic_index == 4){
+      text_layer_set_text(text_layer, biosystems[array_of_column_index[topic_index]][stage_index]);
+    }
   }
 }
 
@@ -93,6 +101,15 @@ static void back_click_handler(ClickRecognizerRef recognizer, void *context) {
     }
     if(topic_index == 1){
       text_layer_set_text(text_layer, math[array_of_column_index[topic_index]][stage_index]);
+    }
+    if(topic_index == 2){
+      text_layer_set_text(text_layer, countries[array_of_column_index[topic_index]][stage_index]);
+    }
+    if(topic_index == 3){
+      text_layer_set_text(text_layer, pertable[array_of_column_index[topic_index]][stage_index]);
+    }
+    if(topic_index == 4){
+      text_layer_set_text(text_layer, biosystems[array_of_column_index[topic_index]][stage_index]);
     }
     //add more subjects here
   }
@@ -110,9 +127,17 @@ static void up_click_handler(ClickRecognizerRef recognizer, void *context) {
       text_layer_set_text(text_layer, vocab[array_of_column_index[topic_index]][stage_index]);
     }
     if(topic_index == 1){
-       text_layer_set_text(text_layer, math[array_of_column_index[topic_index]][stage_index]);
+      text_layer_set_text(text_layer, math[array_of_column_index[topic_index]][stage_index]);
     }
-    //add more subjects here
+    if(topic_index == 2){
+      text_layer_set_text(text_layer, countries[array_of_column_index[topic_index]][stage_index]);
+    }
+    if(topic_index == 3){
+      text_layer_set_text(text_layer, pertable[array_of_column_index[topic_index]][stage_index]);
+    }
+    if(topic_index == 4){
+      text_layer_set_text(text_layer, biosystems[array_of_column_index[topic_index]][stage_index]);
+    }
   }
 }
 
@@ -127,9 +152,17 @@ static void down_click_handler(ClickRecognizerRef recognizer, void *context) {
       text_layer_set_text(text_layer, vocab[array_of_column_index[topic_index]][stage_index]);
     }
     if(topic_index == 1){
-       text_layer_set_text(text_layer, math[array_of_column_index[topic_index]][stage_index]);
+      text_layer_set_text(text_layer, math[array_of_column_index[topic_index]][stage_index]);
     }
-    //add more subjects here
+    if(topic_index == 2){
+      text_layer_set_text(text_layer, countries[array_of_column_index[topic_index]][stage_index]);
+    }
+    if(topic_index == 3){
+      text_layer_set_text(text_layer, pertable[array_of_column_index[topic_index]][stage_index]);
+    }
+    if(topic_index == 4){
+      text_layer_set_text(text_layer, biosystems[array_of_column_index[topic_index]][stage_index]);
+    }
   }
 }
 
@@ -143,11 +176,10 @@ static void click_config_provider(void *context) {
 static void window_load(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
   GRect bounds = layer_get_bounds(window_layer);
-
   text_layer = text_layer_create((GRect) { .origin = { 0, 72 }, .size = { bounds.size.w, bounds.size.h } });
+  text_layer_set_font(text_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
   text_layer_set_text(text_layer, topics[0]);
   text_layer_set_text_alignment(text_layer, GTextAlignmentCenter);
-  
   text_layer_set_overflow_mode(text_layer, GTextOverflowModeWordWrap);
   layer_add_child(window_layer, text_layer_get_layer(text_layer));
 }
