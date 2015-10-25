@@ -14,7 +14,7 @@ int totalNumberOfTopics = 5;
 GColor8 color;
 
 //Rotate through 4 colors in order
-void setColor(){
+void setWordDefColor(){//set background colors for word and definition
   switch(array_of_column_index[topic_index] % 4){
     case 0: color = GColorLavenderIndigo;
             break;
@@ -25,8 +25,26 @@ void setColor(){
     case 3: color = GColorPictonBlue;
             break;
     default: break;
-  }
+  }    
+  //fill with background color
+  text_layer_set_background_color(text_layer, color);
+  window_set_background_color(window, color);
+}
   
+void setCatColor(){//set background color for categories
+  switch(topic_index % 5){
+    case 0: color = GColorRed;
+            break;
+    case 1: color = GColorOrange;
+            break;
+    case 2: color = GColorYellow;
+            break;
+    case 3: color = GColorGreen;
+            break;
+    case 4: color = GColorBlue;
+            break;
+    default: break;
+  }
   //fill with background color
   text_layer_set_background_color(text_layer, color);
   window_set_background_color(window, color);
@@ -39,6 +57,8 @@ static void TopicSelectionUp(){
   else{
     topic_index = topic_index - 1;
   }
+  
+  setCatColor();
 }
 
 static void TopicSelectionDown(){
@@ -48,6 +68,8 @@ static void TopicSelectionDown(){
   else{
     topic_index = 0;
   }
+  
+  setCatColor();
 }   
   
 static void CardSelectionUp(){
@@ -58,7 +80,7 @@ static void CardSelectionUp(){
     array_of_column_index[topic_index] = array_of_column_index[topic_index] - 1;
   }
   
-  setColor();
+  setWordDefColor();
 }
 
 static void CardSelectionDown(){
@@ -69,12 +91,16 @@ static void CardSelectionDown(){
     array_of_column_index[topic_index] = 0; 
   }
   
-  setColor();
+  setWordDefColor();
 }
   
 static void select_click_handler(ClickRecognizerRef recognizer, void *context) {
   if(stage_index < 2 && stage_index>=0 ){
     stage_index++;
+    
+    //so background color changes when moving between stages
+    setWordDefColor();
+    
     if(topic_index == 0){
       text_layer_set_text(text_layer, vocab[array_of_column_index[topic_index]][stage_index]);
     }
@@ -96,6 +122,10 @@ static void select_click_handler(ClickRecognizerRef recognizer, void *context) {
 static void back_click_handler(ClickRecognizerRef recognizer, void *context) {
   if (stage_index > 0 && stage_index <= 2){
     stage_index = stage_index - 1;
+    
+    //so background color changes when moving between stages
+    setWordDefColor();
+    
     if(topic_index == 0){
       text_layer_set_text(text_layer, vocab[array_of_column_index[topic_index]][stage_index]);
     }
@@ -182,6 +212,10 @@ static void window_load(Window *window) {
   text_layer_set_text_alignment(text_layer, GTextAlignmentCenter);
   text_layer_set_overflow_mode(text_layer, GTextOverflowModeWordWrap);
   layer_add_child(window_layer, text_layer_get_layer(text_layer));
+  
+  //initially fill with first background color
+  text_layer_set_background_color(text_layer, GColorRed);
+  window_set_background_color(window, GColorRed);  
 }
 
 static void window_unload(Window *window) {
