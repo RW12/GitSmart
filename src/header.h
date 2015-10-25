@@ -91,7 +91,7 @@ char const * const pertable[20][3] = {
 {"Periodic Table", "Chlorine", "Atomic Number: 17, Avg. Atomic Mass: 35.453"},
 {"Periodic Table", "Argon", "Atomic Number: 18, Avg. Atomic Mass: 39.948"},
 {"Periodic Table", "Potassium", "Atomic Number: 19, Avg. Atomic Mass: 39.098"},
-{"Periodic Table", "Calcium", "Atomic Number: 20, Avg. Atomic Mass: 40.078"},
+{"Periodic Table", "Calcium", "Atomic Number: 20, Avg. Atomic Mass: 40.078"}
 };
 
 // List of biological systems, 11 systems
@@ -106,5 +106,5 @@ char const * const biosystems[11][3] = {
 {"Biological Systems", "Endocrine System", "Communication within the body using hormonesmade by endocrine glands such as the hypothalamus, pituitarygland, pineal body or pineal gland, thyroid, parathyroid and adrenals, i.e., adrenal glands"},
 {"Biological Systems", "Lymphatic System", "Structures involved in the transfer of lymphbetween tissues and the blood stream; includes the lymph and thenodes and vessels. The lymphatic system includes functions including immune responses and development of antibodies"},
 {"Biological Systems", "Muscular System", "Allows for manipulation of the environment, provides locomotion, maintains posture, and produces heat. Includesskeletal muscles, smooth muscles and cardiac muscle"},
-{"Biological Systems", "Nervous System", "Collecting, transferring and processing information with brain, spinal cord and peripheral nervous system"},
+{"Biological Systems", "Nervous System", "Collecting, transferring and processing information with brain, spinal cord and peripheral nervous system"}
 }
