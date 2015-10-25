@@ -1,8 +1,9 @@
 // List of topics, 3 topics
-char const * const topics[3] = {
+char const * const topics[4] = {
   "Vocab",
   "Math",
   "Countries"
+  "Periodic Table"
 };
 
 // List of vocab words, 20 words
@@ -66,4 +67,28 @@ char const * const countries[20][3] = {
 {"Countries", "Turkey", "Capital: Ankara, GDP: 722219, Pop: 77695904"},
 {"Countries", "United Kingdom", "Capital: London, GDP: 2864903, Pop: 64511000"},
 {"Countries", "United States", "Capital: Washington, D.C., GDP: 17968195, Pop: 322014853"}
+};
+
+// List of period table, first 20 elements
+char const * const pertable[20][3] = {
+{"Periodic Table", "Hydrogen", "Atomic Number: 1, Avg. Atomic Mass: 1.008"},
+{"Periodic Table", "Helium", "Atomic Number: 2, Avg. Atomic Mass: 4.003"},
+{"Periodic Table", "Lithium", "Atomic Number: 3, Avg. Atomic Mass: 6.941"},
+{"Periodic Table", "Beryllium", "Atomic Number: 4, Avg. Atomic Mass: 9.012"},
+{"Periodic Table", "Boron", "Atomic Number: 5, Avg. Atomic Mass: 10.811"},
+{"Periodic Table", "Carbon", "Atomic Number: 6, Avg. Atomic Mass: 12.011"},
+{"Periodic Table", "Nitrogen", "Atomic Number: 7, Avg. Atomic Mass: 14.007"},
+{"Periodic Table", "Oxygen", "Atomic Number: 8, Avg. Atomic Mass: 15.999"},
+{"Periodic Table", "Florine", "Atomic Number: 9, Avg. Atomic Mass: 18.998"},
+{"Periodic Table", "Neon", "Atomic Number: 10, Avg. Atomic Mass: 20.18"},
+{"Periodic Table", "Sodium", "Atomic Number: 11, Avg. Atomic Mass: 22.99"},
+{"Periodic Table", "Magnesium", "Atomic Number: 12, Avg. Atomic Mass: 24.305"},
+{"Periodic Table", "Aluminum", "Atomic Number: 13, Avg. Atomic Mass: 26.982"},
+{"Periodic Table", "Silicon", "Atomic Number: 14, Avg. Atomic Mass: 28.086"},
+{"Periodic Table", "Phosphorus", "Atomic Number: 15, Avg. Atomic Mass: 30.974"},
+{"Periodic Table", "Sulfur", "Atomic Number: 16, Avg. Atomic Mass: 32.066"},
+{"Periodic Table", "Chlorine", "Atomic Number: 17, Avg. Atomic Mass: 35.453"},
+{"Periodic Table", "Argon", "Atomic Number: 18, Avg. Atomic Mass: 39.948"},
+{"Periodic Table", "Potassium", "Atomic Number: 19, Avg. Atomic Mass: 39.098"},
+{"Periodic Table", "Calcium", "Atomic Number: 20, Avg. Atomic Mass: 40.078"},
 };
