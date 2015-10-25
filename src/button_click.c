@@ -124,7 +124,7 @@ static void back_click_handler(ClickRecognizerRef recognizer, void *context) {
     stage_index = stage_index - 1;
     
     //so background color changes when moving between stages
-    setWordDefColor();
+    setCatColor();
     
     if(topic_index == 0){
       text_layer_set_text(text_layer, vocab[array_of_column_index[topic_index]][stage_index]);
