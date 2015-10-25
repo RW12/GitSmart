@@ -4,75 +4,114 @@
 static Window *window;
 static TextLayer *text_layer;
 
-int topic_type = 0;
-int index1 = 0;
-int index2 = 0;
-int totalMathCards = 11;
-int totalVocabCards = 20;
-int topic_selection = 1;
-int cardSide = 1;
-int totalNumberOfTopics;
+int array_of_column_index[2] ={0, 0};    // here 2 and 0,0 should be updated once totalNumberOfTopics is updated
+int array_of_max_column_index[2] ={11, 20}; //here 2 and 11, 20 should be updated once totalNumberOfTopics is udpated
+int topic_index = 0;    //maximum of this int is (totalNumberOfTopics - 1)
+int stage_index = 0;    // 0 represents subject selection, 1 represents word scrolling interface, 2 represents detailed definition of the word
+bool word_or_definition = false;  // false is the word, true is definition
+int totalNumberOfTopics = 2;
 
-static void TopicSelection(){
-  if (topic_selection == 0){
-    topic_selection = 1;
-  } else {
-    topic_selection = 0;
+static void TopicSelectionUp(){
+  if(topic_index == 0){
+    topic_index = totalNumberOfTopics - 1;
+  }
+  else{
+    topic_index = topic_index - 1;
+  }
+}
+
+static void TopicSelectionDown(){
+  if(topic_index < totalNumberOfTopics - 1){
+    topic_index++;
+  }
+  else{
+    topic_index = 0;
+  }
+}   
+  
+static void CardSelectionUp(){
+  if(array_of_column_index[topic_index] == 0){
+    array_of_column_index[topic_index] = array_of_max_column_index[topic_index] - 1;
+  }
+  else{
+    array_of_column_index[topic_index] = array_of_column_index[topic_index] - 1;
   }
 }
 
 static void CardSelectionDown(){
-  if (topic_selection == 0) {
-    if (index1 < totalVocabCards - 1){
-      index1++;
-    } else {
-      index1 = 0;
+  if((array_of_column_index[topic_index]) < array_of_max_column_index[topic_index] - 1){
+    array_of_column_index[topic_index]++;
+  } 
+  else{   //already at the bottom of the array
+    array_of_column_index[topic_index] = 0; 
+  }
+}
+  
+static void select_click_handler(ClickRecognizerRef recognizer, void *context) {
+  if(stage_index < 2 && stage_index>=0 ){
+    stage_index++;
+    if(topic_index == 0){
+      text_layer_set_text(text_layer, vocab[array_of_column_index[topic_index]][stage_index]);
     }
-  } else {
-    if (index2 < totalMathCards - 1){
-      index2++;
-    } else {
-      index2 = 0;
+    if(topic_index == 1){
+      text_layer_set_text(text_layer, math[array_of_column_index[topic_index]][stage_index]);
     }
+    //add more subjects here
   }
 }
 
-static void select_click_handler(ClickRecognizerRef recognizer, void *context) {
-  //Pseudo Code
-  if (cardSide == 0){
-    cardSide = 1;
-  } else {
-    cardSide = 0;
-  }
-  if (topic_selection == 0){
-    text_layer_set_text(text_layer, vocab[index1][cardSide]);
-  } else {
-    text_layer_set_text(text_layer, math[index2][cardSide]);
+static void back_click_handler(ClickRecognizerRef recognizer, void *context) {
+  if (stage_index > 0 && stage_index <= 2){
+    stage_index = stage_index - 1;
+    if(topic_index == 0){
+      text_layer_set_text(text_layer, vocab[array_of_column_index[topic_index]][stage_index]);
+    }
+    if(topic_index == 1){
+      text_layer_set_text(text_layer, math[array_of_column_index[topic_index]][stage_index]);
+    }
+    //add more subjects here
   }
 }
+
 
 static void up_click_handler(ClickRecognizerRef recognizer, void *context) {
-  text_layer_set_text(text_layer, "Up");
-  TopicSelection();
-  if (topic_selection == 0){
-    text_layer_set_text(text_layer, vocab[index1][0]);
-  } else {
-    text_layer_set_text(text_layer, math[index2][0]);
+  if(stage_index == 0){
+    TopicSelectionUp();
+    text_layer_set_text(text_layer, topics[topic_index]);
+  }
+  else if(stage_index == 1){
+    CardSelectionUp();
+    if(topic_index == 0){
+      text_layer_set_text(text_layer, vocab[array_of_column_index[topic_index]][stage_index]);
+    }
+    if(topic_index == 1){
+       text_layer_set_text(text_layer, math[array_of_column_index[topic_index]][stage_index]);
+    }
+    //add more subjects here
   }
 }
 
 static void down_click_handler(ClickRecognizerRef recognizer, void *context) {
-  text_layer_set_text(text_layer, "Down");
-  CardSelectionDown();
-  if (topic_selection == 0){
-    text_layer_set_text(text_layer, vocab[index1][0]);
-  } else {
-    text_layer_set_text(text_layer, math[index2][0]);
+  if(stage_index == 0){
+    TopicSelectionDown();
+    text_layer_set_text(text_layer, topics[topic_index]);
+  }
+  else if(stage_index == 1){
+    CardSelectionDown();
+    if(topic_index == 0){
+      text_layer_set_text(text_layer, vocab[array_of_column_index[topic_index]][stage_index]);
+    }
+    if(topic_index == 1){
+       text_layer_set_text(text_layer, math[array_of_column_index[topic_index]][stage_index]);
+    }
+    //add more subjects here
   }
 }
 
+
 static void click_config_provider(void *context) {
   window_single_click_subscribe(BUTTON_ID_SELECT, select_click_handler);
+  window_single_click_subscribe(BUTTON_ID_BACK, back_click_handler);
   window_single_click_subscribe(BUTTON_ID_UP, up_click_handler);
   window_single_click_subscribe(BUTTON_ID_DOWN, down_click_handler);
 }
@@ -82,7 +121,7 @@ static void window_load(Window *window) {
   GRect bounds = layer_get_bounds(window_layer);
 
   text_layer = text_layer_create((GRect) { .origin = { 0, 72 }, .size = { bounds.size.w, bounds.size.h } });
-  text_layer_set_text(text_layer, "Select a topic");
+  text_layer_set_text(text_layer, topics[0]);
   text_layer_set_text_alignment(text_layer, GTextAlignmentCenter);
   
   text_layer_set_overflow_mode(text_layer, GTextOverflowModeWordWrap);
