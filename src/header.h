@@ -1,7 +1,8 @@
-// List of topics, 2 topics
-char const * const topics[2] = {
+// List of topics, 3 topics
+char const * const topics[3] = {
   "Vocab",
-  "Math"
+  "Math",
+  "Countries"
 };
 
 // List of vocab words, 20 words
@@ -41,4 +42,28 @@ char const * const math[11][3] = {
 {"Math", "rational numbers", "Any number that can be expressed as a fraction"},
 {"Math", "repeating decimal", "A decimal with a sequence of digits that repeats itself indefinitely"},
 {"Math", "variable", "A letter used to represent one or more numbers"}
+};
+
+// List of countries, 20 countries
+char const * const countries[20][3] = {
+{"Countries", "Australia", "Capital: Canberra, GDP: 1240803, Pop: 23938400"},
+{"Countries", "Brazil", "Capital: Brasilia, GDP: 1799612, Pop: 204451000"},
+{"Countries", "Canada", "Capital: Ottawa, GDP: 1572781, Pop: 35851774"},
+{"Countries", "China", "Capital: Beijing, GDP: 11384763, Pop: 1376049000"},
+{"Countries", "France", "Capital: Paris, GDP: 2422649, Pop: 67107000"},
+{"Countries", "Germany", "Capital: Berlin, GDP: 3371003, Pop: 81083600"},
+{"Countries", "India", "Capital: New Delhi, GDP: 2182577, Pop: 1276267000"},
+{"Countries", "Indonesia", "Capital: Jakarta, GDP: 872615, Pop: 255461700"},
+{"Countries", "Italy", "Capital: Rome, GDP: 1819047, Pop: 60795612"},
+{"Countries", "Japan", "Capital: Tokyo, GDP: 4116242, Pop: 126919659"},
+{"Countries", "Mexico", "Capital: Mexico City, GDP: 1161483, Pop: 121736809"},
+{"Countries", "Netherlands", "Capital: Amsterdam, GDP: 750782, Pop: 16929326"},
+{"Countries", "Russia", "Capital: Moscow, GDP: 1235858, Pop: 143975923"},
+{"Countries", "Saudi Arabia", "Capital: Riyadh, GDP: 632073, Pop: 30770375"},
+{"Countries", "South Korea", "Capital: Seoul, GDP: 1392952, Pop: 50617045"},
+{"Countries", "Spain", "Capital: Madrid, GDP: 1221387, Pop: 46439864"},
+{"Countries", "Switzerkland", "Capital: Bern, GDP: 676979, Pop: 8211700"},
+{"Countries", "Turkey", "Capital: Ankara, GDP: 722219, Pop: 77695904"},
+{"Countries", "United Kingdom", "Capital: London, GDP: 2864903, Pop: 64511000"},
+{"Countries", "United States", "Capital: Washington, D.C., GDP: 17968195, Pop: 322014853"}
 };
